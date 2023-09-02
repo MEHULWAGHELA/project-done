@@ -1,0 +1,829 @@
+{
+	"swagger": "2.0",
+	"info": {
+	  "version": "1.0",
+	  "title": "STUDENT API",
+	  "contact": {}
+	},
+	"host": "localhost:7000",
+	"basePath": "/api",
+	"securityDefinitions": {},
+	"schemes": [
+	  "http"
+	],
+	"consumes": [
+	  "application/json"
+	],
+	"produces": [
+	  "application/json"
+	],
+	"paths": {
+	  "/product/add": {
+		"post": {
+		  "summary": "Add product",
+		  "tags": [
+			"Product"
+		  ],
+		  "operationId": "Addproduct",
+		  "deprecated": false,
+		  "produces": [
+			"application/json"
+		  ],
+		  "consumes": [
+			"multipart/form-data"
+		  ],
+		  "parameters": [
+			{
+			  "name": "Authorization",
+			  "in": "header",
+			  "required": false,
+			  "default": "Bearer {token}",
+			  "type": "string"
+			},
+			{
+			  "name": "productName",
+			  "in": "formData",
+			  "required": true,
+			  "type": "string",
+			  "description": ""
+			},
+			{
+			  "name": "price",
+			  "in": "formData",
+			  "required": true,
+			  "type": "integer",
+			  "format": "int32",
+			  "description": ""
+			},
+			{
+			  "name": "category",
+			  "in": "formData",
+			  "required": true,
+			  "type": "string",
+			  "description": ""
+			},
+			{
+			  "name": "shopName",
+			  "in": "formData",
+			  "required": true,
+			  "type": "string",
+			  "description": ""
+			},
+			{
+			  "name": "mobile",
+			  "in": "formData",
+			  "required": true,
+			  "type": "integer",
+			  "format": "int32",
+			  "description": ""
+			},
+			{
+			  "name": "discount",
+			  "in": "formData",
+			  "required": true,
+			  "type": "integer",
+			  "format": "int32",
+			  "description": ""
+			},
+			{
+			  "name": "discription",
+			  "in": "formData",
+			  "required": true,
+			  "type": "string",
+			  "description": ""
+			},
+			{
+			  "name": "colors",
+			  "in": "formData",
+			  "required": true,
+			  "type": "string",
+			  "description": ""
+			},
+			{
+			  "name": "productImage",
+			  "in": "formData",
+			  "required": true,
+			  "type": "file",
+			  "format": "file",
+			  "description": ""
+			}
+		  ],
+		  "responses": {
+			"200": {
+			  "description": "",
+			  "headers": {}
+			}
+		  }
+		}
+	  },
+	  "/product/get": {
+		"get": {
+		  "summary": "Get product",
+		  "tags": [
+			"Product"
+		  ],
+		  "operationId": "Getproduct",
+		  "deprecated": false,
+		  "produces": [
+			"application/json"
+		  ],
+		  "parameters": [
+			{
+			  "name": "Authorization",
+			  "in": "header",
+			  "required": false,
+			  "default": "Bearer {token}",
+			  "type": "string"
+			}
+		  ],
+		  "responses": {
+			"200": {
+			  "description": "",
+			  "headers": {}
+			}
+		  }
+		}
+	  },
+	  "/product/update": {
+		"patch": {
+		  "summary": "Update",
+		  "tags": [
+			"Product"
+		  ],
+		  "operationId": "Update",
+		  "deprecated": false,
+		  "produces": [
+			"application/json"
+		  ],
+		  "consumes": [
+			"multipart/form-data"
+		  ],
+		  "parameters": [
+			{
+			  "name": "Authorization",
+			  "in": "header",
+			  "required": false,
+			  "default": "Bearer {token}",
+			  "type": "string"
+			},
+			{
+			  "name": "id",
+			  "in": "query",
+			  "required": true,
+			  "type": "string",
+			  "description": ""
+			},
+			{
+			  "name": "productName",
+			  "in": "formData",
+			  "required": true,
+			  "type": "string",
+			  "description": ""
+			},
+			{
+			  "name": "price",
+			  "in": "formData",
+			  "required": true,
+			  "type": "integer",
+			  "format": "int32",
+			  "description": ""
+			},
+			{
+			  "name": "category",
+			  "in": "formData",
+			  "required": true,
+			  "type": "string",
+			  "description": ""
+			},
+			{
+			  "name": "shopName",
+			  "in": "formData",
+			  "required": true,
+			  "type": "string",
+			  "description": ""
+			},
+			{
+			  "name": "mobile",
+			  "in": "formData",
+			  "required": true,
+			  "type": "integer",
+			  "format": "int32",
+			  "description": ""
+			},
+			{
+			  "name": "discount",
+			  "in": "formData",
+			  "required": true,
+			  "type": "integer",
+			  "format": "int32",
+			  "description": ""
+			},
+			{
+			  "name": "discription",
+			  "in": "formData",
+			  "required": true,
+			  "type": "string",
+			  "description": ""
+			},
+			{
+			  "name": "colors",
+			  "in": "formData",
+			  "required": true,
+			  "type": "string",
+			  "description": ""
+			},
+			{
+			  "name": "productImage",
+			  "in": "formData",
+			  "required": true,
+			  "type": "file",
+			  "format": "file",
+			  "description": ""
+			}
+		  ],
+		  "responses": {
+			"200": {
+			  "description": "",
+			  "headers": {}
+			}
+		  }
+		}
+	  },
+	  "/product/delete": {
+		"delete": {
+		  "summary": "Delete",
+		  "tags": [
+			"Product"
+		  ],
+		  "operationId": "Delete",
+		  "deprecated": false,
+		  "produces": [
+			"application/json"
+		  ],
+		  "parameters": [
+			{
+			  "name": "Authorization",
+			  "in": "header",
+			  "required": false,
+			  "default": "Bearer {token}",
+			  "type": "string"
+			},
+			{
+			  "name": "id",
+			  "in": "query",
+			  "required": true,
+			  "type": "string",
+			  "description": ""
+			}
+		  ],
+		  "responses": {
+			"200": {
+			  "description": "",
+			  "headers": {}
+			}
+		  }
+		}
+	  },
+	  "/user/login": {
+		"post": {
+		  "summary": "Login",
+		  "tags": [
+			"User"
+		  ],
+		  "operationId": "Login",
+		  "deprecated": false,
+		  "produces": [
+			"application/json"
+		  ],
+		  "parameters": [
+			{
+			  "name": "Body",
+			  "in": "body",
+			  "required": true,
+			  "description": "",
+			  "schema": {
+				"$ref": "#/definitions/LoginRequest"
+			  }
+			}
+		  ],
+		  "responses": {
+			"200": {
+			  "description": "",
+			  "headers": {}
+			}
+		  },
+		  "security": []
+		}
+	  },
+	  "/user/getUser": {
+		"get": {
+		  "summary": "Get your details",
+		  "tags": [
+			"User"
+		  ],
+		  "operationId": "Getyourdetails",
+		  "deprecated": false,
+		  "produces": [
+			"application/json"
+		  ],
+		  "parameters": [
+			{
+			  "name": "Authorization",
+			  "in": "header",
+			  "required": false,
+			  "default": "Bearer {token}",
+			  "type": "string"
+			}
+		  ],
+		  "responses": {
+			"200": {
+			  "description": "",
+			  "headers": {}
+			}
+		  }
+		}
+	  },
+	  "/user/register": {
+		"post": {
+		  "summary": "register",
+		  "tags": [
+			"User"
+		  ],
+		  "operationId": "register",
+		  "deprecated": false,
+		  "produces": [
+			"application/json"
+		  ],
+		  "consumes": [
+			"multipart/form-data"
+		  ],
+		  "parameters": [
+			{
+			  "name": "userName",
+			  "in": "formData",
+			  "required": true,
+			  "type": "string",
+			  "description": ""
+			},
+			{
+			  "name": "email",
+			  "in": "formData",
+			  "required": true,
+			  "type": "string",
+			  "description": ""
+			},
+			{
+			  "name": "mobile",
+			  "in": "formData",
+			  "required": true,
+			  "type": "integer",
+			  "format": "int32",
+			  "description": ""
+			},
+			{
+			  "name": "gender",
+			  "in": "formData",
+			  "required": true,
+			  "type": "string",
+			  "description": ""
+			},
+			{
+			  "name": "birthDate",
+			  "in": "formData",
+			  "required": true,
+			  "type": "string",
+			  "description": ""
+			},
+			{
+			  "name": "city",
+			  "in": "formData",
+			  "required": true,
+			  "type": "string",
+			  "description": ""
+			},
+			{
+			  "name": "state",
+			  "in": "formData",
+			  "required": true,
+			  "type": "string",
+			  "description": ""
+			},
+			{
+			  "name": "country",
+			  "in": "formData",
+			  "required": true,
+			  "type": "string",
+			  "description": ""
+			},
+			{
+			  "name": "postalCode",
+			  "in": "formData",
+			  "required": true,
+			  "type": "integer",
+			  "format": "int32",
+			  "description": ""
+			},
+			{
+			  "name": "officeContact",
+			  "in": "formData",
+			  "required": true,
+			  "type": "integer",
+			  "format": "int32",
+			  "description": ""
+			},
+			{
+			  "name": "qualification",
+			  "in": "formData",
+			  "required": true,
+			  "type": "string",
+			  "description": ""
+			},
+			{
+			  "name": "address",
+			  "in": "formData",
+			  "required": true,
+			  "type": "string",
+			  "description": ""
+			},
+			{
+			  "name": "password",
+			  "in": "formData",
+			  "required": true,
+			  "type": "integer",
+			  "format": "int32",
+			  "description": ""
+			},
+			{
+			  "name": "confirmPassword",
+			  "in": "formData",
+			  "required": true,
+			  "type": "integer",
+			  "format": "int32",
+			  "description": ""
+			},
+			{
+			  "name": "userImage",
+			  "in": "formData",
+			  "required": true,
+			  "type": "file",
+			  "format": "file",
+			  "description": ""
+			}
+		  ],
+		  "responses": {
+			"200": {
+			  "description": "",
+			  "headers": {}
+			}
+		  },
+		  "security": []
+		}
+	  },
+	  "/user/delete": {
+		"delete": {
+		  "summary": "delete",
+		  "tags": [
+			"User"
+		  ],
+		  "operationId": "delete",
+		  "deprecated": false,
+		  "produces": [
+			"application/json"
+		  ],
+		  "parameters": [
+			{
+			  "name": "userEmail",
+			  "in": "query",
+			  "required": true,
+			  "type": "string",
+			  "description": ""
+			},
+			{
+			  "name": "adminEmail",
+			  "in": "query",
+			  "required": true,
+			  "type": "string",
+			  "description": ""
+			},
+			{
+			  "name": "adminPassword",
+			  "in": "query",
+			  "required": true,
+			  "type": "string",
+			  "description": ""
+			}
+		  ],
+		  "responses": {
+			"200": {
+			  "description": "",
+			  "headers": {}
+			}
+		  },
+		  "security": []
+		}
+	  },
+	  "/addtocart/get": {
+		"get": {
+		  "summary": "Get",
+		  "tags": [
+			"Add To Cart"
+		  ],
+		  "operationId": "Get",
+		  "deprecated": false,
+		  "produces": [
+			"application/json"
+		  ],
+		  "parameters": [
+			{
+			  "name": "Authorization",
+			  "in": "header",
+			  "required": false,
+			  "default": "Bearer {token}",
+			  "type": "string"
+			}
+		  ],
+		  "responses": {
+			"200": {
+			  "description": "",
+			  "headers": {}
+			}
+		  }
+		}
+	  },
+	  "/addtocart/add": {
+		"post": {
+		  "summary": "Add",
+		  "tags": [
+			"Add To Cart"
+		  ],
+		  "operationId": "Add",
+		  "deprecated": false,
+		  "produces": [
+			"application/json"
+		  ],
+		  "parameters": [
+			{
+			  "name": "Authorization",
+			  "in": "header",
+			  "required": false,
+			  "default": "Bearer {token}",
+			  "type": "string"
+			},
+			{
+			  "name": "Body",
+			  "in": "body",
+			  "required": true,
+			  "description": "",
+			  "schema": {
+				"$ref": "#/definitions/AddRequest"
+			  }
+			}
+		  ],
+		  "responses": {
+			"200": {
+			  "description": "",
+			  "headers": {}
+			}
+		  }
+		}
+	  },
+	  "/addtocart/remove": {
+		"delete": {
+		  "summary": "Remove",
+		  "tags": [
+			"Add To Cart"
+		  ],
+		  "operationId": "Remove",
+		  "deprecated": false,
+		  "produces": [
+			"application/json"
+		  ],
+		  "parameters": [
+			{
+			  "name": "Authorization",
+			  "in": "header",
+			  "required": false,
+			  "default": "Bearer {token}",
+			  "type": "string"
+			},
+			{
+			  "name": "productId",
+			  "in": "query",
+			  "required": true,
+			  "type": "string",
+			  "description": ""
+			}
+		  ],
+		  "responses": {
+			"200": {
+			  "description": "",
+			  "headers": {}
+			}
+		  }
+		}
+	  },
+	  "/order/get": {
+		"get": {
+		  "summary": "Get",
+		  "tags": [
+			"Order"
+		  ],
+		  "operationId": "Get1",
+		  "deprecated": false,
+		  "produces": [
+			"application/json"
+		  ],
+		  "parameters": [
+			{
+			  "name": "Authorization",
+			  "in": "header",
+			  "required": false,
+			  "default": "Bearer {token}",
+			  "type": "string"
+			}
+		  ],
+		  "responses": {
+			"200": {
+			  "description": "",
+			  "headers": {}
+			}
+		  }
+		}
+	  },
+	  "/order/add": {
+		"post": {
+		  "summary": "Add",
+		  "tags": [
+			"Order"
+		  ],
+		  "operationId": "PostAdd",
+		  "deprecated": false,
+		  "produces": [
+			"application/json"
+		  ],
+		  "parameters": [
+			{
+			  "name": "Authorization",
+			  "in": "header",
+			  "required": false,
+			  "default": "Bearer {token}",
+			  "type": "string"
+			},
+			{
+			  "name": "Body",
+			  "in": "body",
+			  "required": true,
+			  "description": "",
+			  "schema": {
+				"$ref": "#/definitions/AddRequest1"
+			  }
+			}
+		  ],
+		  "responses": {
+			"200": {
+			  "description": "",
+			  "headers": {}
+			}
+		  }
+		}
+	  },
+	  "/order/remove": {
+		"delete": {
+		  "summary": "Remove",
+		  "tags": [
+			"Order"
+		  ],
+		  "operationId": "DeleteRemove",
+		  "deprecated": false,
+		  "produces": [
+			"application/json"
+		  ],
+		  "parameters": [
+			{
+			  "name": "Authorization",
+			  "in": "header",
+			  "required": false,
+			  "default": "Bearer {token}",
+			  "type": "string"
+			},
+			{
+			  "name": "productId",
+			  "in": "query",
+			  "required": true,
+			  "type": "string",
+			  "description": ""
+			}
+		  ],
+		  "responses": {
+			"200": {
+			  "description": "",
+			  "headers": {}
+			}
+		  }
+		}
+	  },
+	  "/orderCompleted/get": {
+		"get": {
+		  "summary": "Get",
+		  "tags": [
+			"Order Completed"
+		  ],
+		  "operationId": "Get2",
+		  "deprecated": false,
+		  "produces": [
+			"application/json"
+		  ],
+		  "parameters": [
+			{
+			  "name": "Authorization",
+			  "in": "header",
+			  "required": false,
+			  "default": "Bearer {token}",
+			  "type": "string"
+			}
+		  ],
+		  "responses": {
+			"200": {
+			  "description": "",
+			  "headers": {}
+			}
+		  }
+		}
+	  }
+	},
+	"definitions": {
+	  "LoginRequest": {
+		"title": "LoginRequest",
+		"example": {
+		  "email": "example@gmail.com",
+		  "password": "1234"
+		},
+		"type": "object",
+		"properties": {
+		  "email": {
+			"type": "string"
+		  },
+		  "password": {
+			"type": "string"
+		  }
+		},
+		"required": [
+		  "email",
+		  "password"
+		]
+	  },
+	  "AddRequest": {
+		"title": "AddRequest",
+		"example": {
+		  "productId": "6483225cbfd0e3041ab6a5c6"
+		},
+		"type": "object",
+		"properties": {
+		  "productId": {
+			"type": "string"
+		  }
+		},
+		"required": [
+		  "productId"
+		]
+	  },
+	  "AddRequest1": {
+		"title": "AddRequest1",
+		"example": {
+		  "productId": "648aab45c38b3ea03125c1ea",
+		  "quantity": "7"
+		},
+		"type": "object",
+		"properties": {
+		  "productId": {
+			"type": "string"
+		  },
+		  "quantity": {
+			"type": "string"
+		  }
+		},
+		"required": [
+		  "productId",
+		  "quantity"
+		]
+	  }
+	},
+	"security": [],
+	"tags": [
+	  {
+		"name": "Product"
+	  },
+	  {
+		"name": "User"
+	  },
+	  {
+		"name": "Add To Cart"
+	  },
+	  {
+		"name": "Order"
+	  },
+	  {
+		"name": "Order Completed"
+	  }
+	]
+  }

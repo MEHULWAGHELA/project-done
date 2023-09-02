@@ -1,0 +1,15 @@
+.hoc {
+  &_sidebar {
+    position: sticky;
+    top: 0;
+    color: white;
+    background-color: #13101c;
+    min-height: 100vh;
+    max-height: 100vh;
+    overflow: auto;
+  }
+  &_header {
+    position: sticky;
+    top: 0;
+  }
+}

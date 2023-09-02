@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="./favicon.png">
+    <title>Project API</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        .bg-image {
+            /* The image used */
+            background: url("./bg.jpg");
+            
+            /* Add the blur effect */
+            filter: blur(8px);
+            -webkit-filter: blur(8px);
+            
+            /* Full height */
+            height: 100vh; 
+            
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+            /* Position text in the middle of the page/image */
+        .bg-text {
+            background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+            color: white;
+            font-weight: bold;
+            border-radius: 20px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            width: 80%;
+            padding: 100px 20px;
+            text-align: center;
+        }
+        .bg-text button {
+            margin-top: 30px;
+            padding: 15px 35px;
+            border: none;
+            border-radius: 5px;
+            transition: 0.3s;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .bg-text a:hover button {
+            background-color: transparent;
+            outline: 1px solid white;
+        }
+        .bg-text a:hover button{
+            color: white;
+        }
+        .bg-text  a{
+            text-decoration: none;
+            color: black;
+        } 
+        .bg-text  button:active{
+            outline: 1px solid white;
+        } 
+    </style>
+</head>
+<body>
+    <div class="bg-image"></div>
+
+    <div class="bg-text">
+        <h2>Student API</h2>
+        <h1 style="font-size:50px; margin-top: 20px;">Welcome to Project API</h1>
+        <p style="margin-top: 25px;">Created by : Divyesh Suhagiya</p>
+        <a href="/api-docs/"><button>GO TO API</button></a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+.dashboard {
+  &_chartOne {
+    padding: 10px;
+  }
+  &_chartOne {
+    height: auto !important;
+    width: 100% !important;
+  }
+  &_chartOne canvas {
+    height: auto !important;
+    width: 100% !important;
+  }
+  &_chartTwo {
+    height: auto !important;
+    width: 100% !important;
+  }
+  &_chartTwo canvas {
+    height: auto !important;
+    width: 100% !important;
+  }
+}
+
+.bottom_row {
+  padding: 5px;
+  background-color: rgb(149, 149, 216);
+  margin: 0;
+}
+
+.revenue {
+  font-weight: 600;
+  border: 2px solid yellow;
+  padding: 10px;
+  color: white;
+  background-color: rgb(16, 16, 52);
+}
+
+.revenue_bottom {
+  font-weight: 600;
+  border: 2px solid yellow;
+  padding: 10px;
+  color: white;
+  background-color: rgb(21, 23, 31);
+}
+
+.label-dashboar {
+  color: rgb(25 28 28);
+  background-color: rgb(174 211 180);
+  padding: 10px;
+}

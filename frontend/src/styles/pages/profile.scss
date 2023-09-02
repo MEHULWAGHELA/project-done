@@ -1,0 +1,19 @@
+:root {
+  --width: 100%;
+}
+
+.profile-icons {
+  font-size: 28px !important;
+  padding: 5px;
+  color: black;
+}
+
+.profile-data {
+  font-size: 25px;
+}
+
+.profile-image {
+  width: var(--width);
+  height: calc(var(--width) * 1.5);
+  margin: 0px auto;
+}
