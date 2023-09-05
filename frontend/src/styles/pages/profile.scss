@@ -1,6 +1,4 @@
-:root {
-  --width: 100%;
-}
+
 
 .profile-icons {
   font-size: 28px !important;
@@ -13,7 +11,7 @@
 }
 
 .profile-image {
-  width: var(--width);
-  height: calc(var(--width) * 1.5);
+  width: 100%;
+  height: 427px;
   margin: 0px auto;
 }

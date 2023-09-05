@@ -124,7 +124,7 @@ const Cart = () => {
                           () => quantityDecrement(i)
                         } />
                         {console.log(document.querySelectorAll('.q_value')[i]?.value)}
-                        <span>Total price:-{(document.querySelectorAll('.q_value')[i] ? document.querySelectorAll('.q_value')[i].value : 1) * x.price}</span>
+                        <span>Total price:-{(document.querySelectorAll('.q_value')[i] == undefined ? 1 : document.querySelectorAll('.q_value')[i].value) * x.price}</span>
                       </FormGroup>
                       <Button onClick={() => { buyNow(x._id, i) }}>
                         Buy Now
