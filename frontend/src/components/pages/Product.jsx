@@ -133,7 +133,7 @@ const Product = (props) => {
             state.product.productData.map((x, i) => {
               return (
                 <Col xs={12} sm={6} lg={4} key={i}>
-                  <Card className='position-relative' style={{ backgroundColor: x.color }}>
+                  <Card className='position-relative' style={{ backgroundColor: x.colors }}>
                     <img
                       alt="Sample"
                       src={x.productImage}
@@ -146,6 +146,7 @@ const Product = (props) => {
                       </div>
                     </div>
                     <CardBody>
+                      {console.log(x)}
                       <CardTitle tag="h5">
                         Product:-{x.productName}
                       </CardTitle>
@@ -191,9 +192,8 @@ const Product = (props) => {
                             <AiFillMinusSquare className='cart_quatity_icons' onClick={
                               () => quantityDecrement(i)
                             } />
-                            <div>Total price:-{(document.querySelectorAll('.q_value')[i] == undefined ? 1 : document.querySelectorAll('.q_value')[i].value) * x.price}</div>
+                            <div>Total price:-{(document.querySelectorAll('.q_value')[i]?.value == undefined ? 1 : document.querySelectorAll('.q_value')[i].value) * x.price}</div>
                           </FormGroup>
-
                           <Button className='buy_btn' onClick={() => { buyNow(x._id, i) }}>
                             Buy Now
                           </Button>

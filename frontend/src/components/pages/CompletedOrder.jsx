@@ -23,7 +23,7 @@ const CompletedOrder = () => {
           state.product.productData.map((x, i) => {
             return (
               <Col xs={12} md={6} lg={4} key={i} >
-                <Card className='position-relative' style={{ backgroundColor: x.color }}>
+                <Card className='position-relative' style={{ backgroundColor: x.colors }}>
                   <img
                     alt="Sample"
                     src={x.productImage}
