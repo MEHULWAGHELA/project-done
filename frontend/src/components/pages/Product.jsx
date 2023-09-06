@@ -192,7 +192,7 @@ const Product = (props) => {
                             <AiFillMinusSquare className='cart_quatity_icons' onClick={
                               () => quantityDecrement(i)
                             } />
-                            <div>Total price:-{(document.querySelectorAll('.q_value')[i]?.value == undefined ? 1 : document.querySelectorAll('.q_value')[i].value) * x.price}</div>
+                            <div>Total price:-{((document.querySelectorAll('.q_value')[i]?.value == undefined || document.querySelectorAll('.q_value')[i]?.value == '') ? 1 : document.querySelectorAll('.q_value')[i].value) * x.price}</div>
                           </FormGroup>
                           <Button className='buy_btn' onClick={() => { buyNow(x._id, i) }}>
                             Buy Now

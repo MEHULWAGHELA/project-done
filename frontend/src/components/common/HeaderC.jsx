@@ -34,7 +34,7 @@ const HeaderC = () => {
     <Fragment>
       <Container fluid className='header'>
         <div className='d-flex justify-content-between'>
-          <Button onClick={logOut} className='logout'>Logout</Button>
+          <Button onClick={logOut} className='logout ms-2'>Logout</Button>
           <NavLink to="/profile" className='text-white text-decoration-none d-flex'>
             <div className='header-profile mx-2'><img src={state.profile.profileData[0]?.userImage} className='rounded-circle' alt="" /></div>
             <h2 className='mx-2'>{state.profile.profileData[0]?.userName}</h2>
