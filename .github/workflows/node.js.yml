@@ -1,0 +1,76 @@
+name: Node.js and React.js CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  node-ci:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [14.x, 16.x, 18.x]
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+    - run: npm ci
+    - run: npm run build --if-present
+    - run: npm test
+
+  windows-ci:
+
+    runs-on: windows-latest
+
+    strategy:
+      matrix:
+        node-version: [14.x, 16.x, 18.x]
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+    - run: npm ci
+    - run: npm run build --if-present
+    - run: npm test
+
+  react-ci:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Use Node.js 14.x
+      uses: actions/setup-node@v3
+      with:
+        node-version: 14.x
+        cache: 'npm'
+    - run: npm ci
+    - run: npm run build --if-present
+    - run: npm test
+
+    - name: Install and Build React
+      run: |
+        npm install -g create-react-app
+        npx create-react-app my-react-app
+        cd my-react-app
+        npm ci
+        npm run build
+      shell: bash
+
+    - name: Test React App
+      run: |
+        cd my-react-app
+        npm test
+      shell: bash
